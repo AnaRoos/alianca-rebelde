@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aliança Rebelde</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap-theme.min.css" />
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Candidatos Aliança Rebelde</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <table id="aliancaTable" class="table table-bordered table-condensed table-striped">
+                        <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Planeta</th>
+                            <th>Nascimento</th>
+                            <th>Motivação</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Solicitação Aliança Rebelde</div>
+                        <div class="panel-body">
+                            <form id="alianca-form">
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" name="nome" id="nome" class="form-control input-lg"
+                                           placeholder="Nome">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="planeta">Planeta</label>
+                                    <input type="text" name="planeta" id="planeta" class="form-control input-lg"
+                                           placeholder="Planeta">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="data_nascimento">Data de Nascimento</label>
+                                    <input type="text" name="data_nascimento" id="data_nascimento" class="form-control input-lg"
+                                           placeholder="Data de Nascimento">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="descricao">Descrição da Motivação para entrar na Aliança</label>
+                                    <input type="text" name="descricao" id="descricao" class="form-control input-lg"
+                                           placeholder="Descrição da Motivação para entrar na Aliança ">
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" id="updateButton" class="btn btn-lg btn-primary">
+                                        Adicionar Solicitação
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/html" id="aliancaTemplate">
+            <tr>
+                <td><%- nome %></td>
+                <td><%- planeta %></td>
+                <td><%- data_nascimento %></td>
+                <td><%- descricao %></td>
+                <td>
+                    <button type='button' class='alianca-edit btn btn-default' data-id='<%- id %>'>
+                        <span class='glyphicon glyphicon-edit'></span>
+                    </button>
+                </td>
+                <td>
+                    <button type='button' class='alianca-delete btn btn-default' data-id='<%- id %>'>
+                        <span class='glyphicon glyphicon-remove'></span>
+                    </button>
+                </td>
+            </tr>
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="js/alianca-form.js"></script>
+        <script src="js/alianca-table.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
